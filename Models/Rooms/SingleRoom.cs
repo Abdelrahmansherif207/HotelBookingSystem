@@ -6,9 +6,8 @@ public class SingleRoom : BaseRoom
 {
     protected override decimal RoomPriceRatio { get;} = 1.5m;
     
-    public SingleRoom(RoomTypeEnum roomType) : base(roomType)
+    public SingleRoom() : base(RoomTypeEnum.Single)
     {
-        this.RoomType = roomType;
         this.PricePerNight = this.CalculatePricePerNight();
         this.MaxOccupancy = OccupyEnum.Single;
     }

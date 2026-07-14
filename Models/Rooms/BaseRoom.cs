@@ -8,7 +8,7 @@ public abstract class BaseRoom
     
     protected readonly decimal BasePrice = 50m;
     
-    public required RoomTypeEnum RoomType { get; set; }
+    public RoomTypeEnum RoomType { get; }
 
     public decimal PricePerNight { get; set; }
 

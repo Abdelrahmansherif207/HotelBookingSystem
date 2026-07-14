@@ -6,13 +6,10 @@ public class Suite : BaseRoom
 {
     protected override decimal RoomPriceRatio { get; } = 6m;
     
-    public Suite(RoomTypeEnum roomTypeEnum) : base(roomTypeEnum)
+    public Suite() : base(RoomTypeEnum.Suite)
     {
-        this.RoomType = roomTypeEnum;
         this.PricePerNight = this.CalculatePricePerNight();
         this.MaxOccupancy = OccupyEnum.Suite;
-
-
     }
     protected override decimal CalculatePricePerNight()
     {

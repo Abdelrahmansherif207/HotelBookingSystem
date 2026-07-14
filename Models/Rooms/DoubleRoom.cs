@@ -6,9 +6,8 @@ public class DoubleRoom : BaseRoom
 {
     protected override decimal RoomPriceRatio { get; } = 3m;
     
-    public DoubleRoom(RoomTypeEnum roomType) : base(roomType)
+    public DoubleRoom( ) : base(RoomTypeEnum.Double)
     {
-        this.RoomType = roomType;
         this.PricePerNight = this.CalculatePricePerNight();
         this.MaxOccupancy = OccupyEnum.Double;
     }
