@@ -14,14 +14,17 @@ public abstract class BaseRoom
 
     public OccupyEnum MaxOccupancy { get; set; } = OccupyEnum.Single;
     
-    protected abstract decimal RoomPriceRatio { get; }
-
+    public bool IsAvailable { get; set; } = true;
+    
     protected BaseRoom(RoomTypeEnum roomType)
     {
         this.RoomNumber = Guid.NewGuid();
         this.RoomType = roomType;
         this.PricePerNight = BasePrice;
     }
+    public void ToggleAvailability() => IsAvailable = !IsAvailable;
+    
+    protected abstract decimal RoomPriceRatio { get; }
     
     protected abstract decimal CalculatePricePerNight();
 
